@@ -1,0 +1,20 @@
+﻿@model Assignment1.Areas.User.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2> User Login</h2>
+
+<form asp-action="OnUserLogin" asp-controller="Login" asp-area="User" method="post">
+    <div>
+        Username: <input type="text" asp-for="Username" />
+    </div>
+    <hr/>
+    <div>
+        Password: <input type="password" asp-for="Password" />
+    </div>
+    <div>
+        <input type="submit" value="Login"/> 
+    </div>
+</form>
+

@@ -1,0 +1,23 @@
+﻿@model Assignment1.Models.ArticleModel
+@{
+    ViewData["Title"] = "Article";
+
+    string NewComment = ViewBag.AddedComment;
+}
+
+<h1>Article</h1>
+
+<hr/>
+<h2>Comments</h2>
+
+<form  asp-action="AddComment" asp-controller="Article" method="post">
+    <div>
+        Enter Comment: <input type="text" asp-for="comment" />
+    </div>
+    <div>
+        <input type="submit" value="Add Comment" />
+    </div>
+</form>
+@await Component.InvokeAsync("Comment",NewComment);
+@await Component.InvokeAsync("CommentCount");
+
